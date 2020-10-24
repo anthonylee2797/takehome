@@ -1,0 +1,25 @@
+* {
+  margin: auto;
+}
+
+.App {
+  text-align: center;
+}
+
+
+.comments {
+  transition: .3s;
+  text-align: left;
+  margin: auto;
+  width: 20%;
+  color: rgb(94, 94, 94);
+}
+
+.comment {
+  border: 1px solid black;
+  margin: 5px;
+}
+
+.comment h3 {
+  color: black;
+}
