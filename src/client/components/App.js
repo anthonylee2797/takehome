@@ -2,15 +2,21 @@ import React, { useEffect, useState } from 'react'
 import Comment from './Comment'
 import Form from './Form'
 import Api from '../api/api'
+import mailchimp from '../assets/mailchimp-logo.png'
 
 const App = () => {
   const [comments, setComments] = useState([])
 
-  // Grabs comments
+  // Grabs comments from database
   useEffect(() => {
     async function getComments () {
-      const comments = await Api.get('/getComments')
-      setComments(comments)
+      try {
+        const data = await Api.get('/getComments')
+        data.reverse()
+        setComments(data)
+      } catch (error) {
+        console.log(error)
+      }
     }
 
     getComments()
@@ -18,14 +24,12 @@ const App = () => {
 
   return (
     <div className="App">
-      Mailchimp Takehome
-      <button onClick={() => console.log('hello')}>Click me</button>
+      <img src={mailchimp}></img>
       <Form comments={comments} setComments={setComments} />
-      <h1>Recent Comments</h1>
+      <h2>Recent Comments</h2>
       <div className='comments'>
-        {comments.slice(0).reverse().map((comment) => <Comment key='comment' comment={comment} />)}
+        {comments.map((comment) => <Comment key={comment.id} comment={comment} />)}
       </div>
-
     </div>
   )
 }

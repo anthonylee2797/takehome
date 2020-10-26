@@ -4,7 +4,7 @@ const Api = {
       method,
       headers: {
         Accept: 'application/json',
-        'Content-Type': method === 'get' ? 'application/x-www-form-urlencoded' : 'application/json'
+        'Content-Type': 'application/json'
       }
     }
     if (Object.keys(body).length > 0) {

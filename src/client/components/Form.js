@@ -14,21 +14,26 @@ const Form = (props) => {
       return
     }
 
+    
     // posting to database and returning comment to client
-    const commentID = await Api.post('/createComment', { name, message })
-
-    console.log(commentID.id, 'commentid')
-    const addedComment = await Api.get(`/getComment/?id=${commentID.id}`)
+    try {
+      const commentID = await Api.post('/createComment', { name, message })
+      const addedComment = await Api.get(`/getComment/?id=${commentID.id}`)
 
     // clearing input
-    setName('')
-    setMessage('')
+     setName('')
+     setMessage('')
 
-    // setting state of comments
-    const newComments = [...props.comments, addedComment]
-    props.setComments(newComments)
+      // setting state of comments
+      const newComments = [addedComment, ...props.comments]
+      props.setComments(newComments)
+    } catch (error) {
+      console.log(error)
+    }
   }
-
+  /**
+   * @param {InputEvent} e
+   */
   function handleNameInput (e) {
     const name = e.target.value
     setName(name)
@@ -41,12 +46,17 @@ const Form = (props) => {
 
   return (
     <div>
-      <form onSubmit={addComment}>
-        <label htmlFor='name'>Name</label>
-        <input name="name" onChange={handleNameInput} value={name} placeholder="Insert Name" />
-        <label htmlFor='comment'>Comment</label>
-        <textarea name="comment" onChange={handleCommentInput} value={message} placeholder="Insert Comment" />
-        <button type="submit">Add Comment</button>
+      <form className="form" onSubmit={addComment}>
+        <div  className='form-name'>
+          <label htmlFor='name'>Name</label>
+          <input name="name" onChange={handleNameInput} value={name} placeholder="Insert Name" />
+        </div>
+
+        <div className='form-comment'>
+          <label htmlFor='comment'>Comment</label>
+          <textarea name="comment" onChange={handleCommentInput} value={message} placeholder="Insert Comment" />
+        </div>
+        <button data-testid="submit-btn" className='form-button' type="submit">Add Comment</button>
       </form>
     </div>
   )

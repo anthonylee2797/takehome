@@ -1,11 +1,64 @@
 * {
   margin: auto;
+  font-family: Means Web,Georgia,Times,Times New Roman,serif;
+  background-color: #ffe01b
 }
 
 .App {
   text-align: center;
 }
 
+img {
+  width: 5%;
+}
+
+/* Form */
+.form label{
+  display: block;
+}
+
+.form button {
+  display: block;
+}
+
+.form label {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.form-name input {
+  width: 15%;
+  font-size: 16px;
+  padding: 15px;
+  border: solid 2px black;
+}
+
+.form-comment textarea {
+  width: 15%;
+  height: 75px;
+  padding: 15px;
+  font-size: 16px;
+  border: solid 2px black;
+}
+
+.form-button {
+  background-color: #007c89;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding: 10px;
+  transition: .3s;
+  margin-top: 10px;
+}
+
+.form-button:hover {
+  background-color: #006874 ;
+  cursor: pointer;
+}
+
+/* Comments */
 
 .comments {
   transition: .3s;
@@ -20,6 +73,7 @@
   margin: 5px;
 }
 
-.comment h3 {
+.comment {
   color: black;
+  font-size: 16px;
 }

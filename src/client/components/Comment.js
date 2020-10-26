@@ -8,18 +8,17 @@ const Comment = (props) => {
 
   return (
     <div className="comment">
-      <h4>{name} - {date}</h4>
-      <h3>{message}</h3>
-
+      <p>{name} - {date}</p>
+      <p>{message}</p>
     </div>
   )
 }
 
 Comment.propTypes = {
   comment: PropTypes.shape({
-    message: PropTypes.number.isRequired,
-    name: PropTypes.number.isRequired,
-    created: PropTypes.number.isRequired
+    message: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    created: PropTypes.string.isRequired
   })
 }
 
