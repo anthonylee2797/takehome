@@ -6,7 +6,7 @@ import mailchimp from '../assets/mailchimp-logo.png'
 
 const App = () => {
   const [comments, setComments] = useState([])
-
+ 
   // Grabs comments from database
   useEffect(() => {
     async function getComments () {

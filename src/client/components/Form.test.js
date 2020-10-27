@@ -4,17 +4,12 @@ import { render, screen, fireEvent, getByPlaceholderText, getByText, waitFor } f
 // import api from '../api/api'
 import '@testing-library/jest-dom'
 
-// it('should not submit form when no values in name input or message text area')
-// it('should submit form when values in name input and message text area')
-// it('should clear form after submit')
-// it('')
 
 const setup = () => {
-  const utils = render (<Form/>)
+  const utils = render (<Form />)
   const nameInput = utils.getByPlaceholderText('Insert Name')
   const commentInput = utils.getByPlaceholderText('Insert Comment')
   const submit = utils.getByTestId('submit-btn')
-
 
   return {
     submit,
@@ -32,15 +27,6 @@ test('should render form correctly', () => {
   expect(submit).toBeTruthy()
 })
 
-test('should update input values as changed', () => {
-  const { nameInput, commentInput } = setup()
-  fireEvent.change(nameInput, {target: {value: "name"}})
-  fireEvent.change(commentInput, {target: {value: "comment"}})
-
-  expect(nameInput.value).toBe("name")
-  expect(commentInput.value).toBe("comment")
-})
-
 test('should not submit form when no values in name input or message text area', () => {
   const { nameInput, commentInput, submit } = setup()
   const alertMock = jest.spyOn(window,'alert'); 
@@ -53,25 +39,13 @@ test('should not submit form when no values in name input or message text area',
   expect(global.alert).toHaveBeenCalledTimes(1)
 })
 
-test('should submit form when values in name input and message text area', ()=> {
+test('should submit comment and reset input values upon submit', async () => {
   const { nameInput, commentInput, submit } = setup()
-  const alertMock = jest.spyOn(window,'alert'); 
-  fireEvent.change(nameInput, { target: { value: 'Anthony' } })
-  fireEvent.change(commentInput, { target: { value: 'I like tea' } })
+  fireEvent.change(nameInput, {target: {value: "name"}})
+  fireEvent.change(commentInput, {target: {value: "comment"}})
   fireEvent.click(submit)
-  expect(global.alert).toHaveBeenCalledTimes(0)
+
+  expect(nameInput.value).toBe("")
+  expect(commentInput.value).toBe("")
 })
-
-// test('should reset input values upon submit', async () => {
-//   const { nameInput, commentInput, submit } = setup()
-//   fireEvent.change(nameInput, {target: {value: "name"}})
-//   fireEvent.change(commentInput, {target: {value: "comment"}})
-//   fireEvent.click(submit)
-
-//   await waitFor (() => {
-//     expect(nameInput.value).toBe("")
-//     expect(commentInput.value).toBe("")
-//   })
- 
-// })
 
