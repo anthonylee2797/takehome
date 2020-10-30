@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render form correctly 1`] = `
+<div>
+  <div>
+    <form
+      class="form"
+    >
+      <div
+        class="form-name"
+      >
+        <label
+          for="name"
+        >
+          Name
+        </label>
+        <input
+          name="name"
+          placeholder="Insert Name"
+          value=""
+        />
+      </div>
+      <div
+        class="form-comment"
+      >
+        <label
+          for="comment"
+        >
+          Comment
+        </label>
+        <textarea
+          name="comment"
+          placeholder="Insert Comment"
+        />
+      </div>
+      <button
+        class="form-button"
+        data-testid="submit-btn"
+        type="submit"
+      >
+        Add Comment
+      </button>
+    </form>
+  </div>
+</div>
+`;

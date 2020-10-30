@@ -22,7 +22,6 @@ app.post('/createComment', function (request, response) {
   comment.createComment(body).then(result => {
     response.send(result);
   });
-
 });
 
 app.get('/getComment', function (request, response) {

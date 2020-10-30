@@ -20,16 +20,12 @@ const setup = () => {
 }
 
 test('should render form correctly', () => {
-  const { nameInput, commentInput, submit } = setup()
-
-  expect(nameInput).toBeTruthy()
-  expect(commentInput).toBeTruthy()
-  expect(submit).toBeTruthy()
+  const form = render (<Form />)
+  expect(form.container).toMatchSnapshot()
 })
 
 test('should not submit form when no values in name input or message text area', () => {
   const { nameInput, commentInput, submit } = setup()
-  const alertMock = jest.spyOn(window,'alert'); 
   
   global.alert = jest.fn()
 

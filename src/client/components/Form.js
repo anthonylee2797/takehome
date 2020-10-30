@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Api from '../api/api'
 
-const Form = ({comments, setComments}) => {
+const Form = React.memo(({comments, setComments}) => {
   const [input, setInput] = useState({name: "", comment: ""})
 
   async function addComment (e) {
@@ -57,7 +57,7 @@ const Form = ({comments, setComments}) => {
       </form>
     </div>
   )
-}
+})
 
 Form.propTypes = {
   comments: PropTypes.array,

@@ -4,6 +4,8 @@
   background-color: #ffe01b
 }
 
+/* App */
+
 .App {
   text-align: center;
 }
@@ -64,13 +66,23 @@ img {
   transition: .3s;
   text-align: left;
   margin: auto;
-  width: 20%;
+  max-width: 30%;
   color: rgb(94, 94, 94);
 }
 
+.comment-top-p1 {
+  font-weight: bold;
+}
+
+.comment-bottom {
+  font-size: 14px;
+  margin: .5% 0;
+}
+
 .comment {
+  padding: 1%;
   border: 1px solid black;
-  margin: 5px;
+  margin: 2%;
 }
 
 .comment {
