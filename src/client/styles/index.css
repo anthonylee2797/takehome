@@ -15,11 +15,12 @@ img {
 }
 
 /* Form */
-.form label{
-  display: block;
+.form {
+  margin-bottom: 1%;
 }
 
-.form button {
+
+.form label{
   display: block;
 }
 
@@ -44,7 +45,12 @@ img {
   border: solid 2px black;
 }
 
-.form-button {
+.form-buttons {
+  width: 20%;
+  display: flex;
+}
+
+.form-buttons button {
   background-color: #007c89;
   border: none;
   font-size: 16px;
@@ -65,14 +71,21 @@ img {
 .comments {
   transition: .3s;
   text-align: left;
-  margin: auto;
+  margin: .5% auto;
   max-width: 30%;
   color: rgb(94, 94, 94);
+  overflow-wrap: break-word;
 }
 
 .comment-top-p1 {
   font-weight: bold;
 }
+
+.test {
+  font-weight: bold;
+  margin-right: 1%;
+}
+
 
 .comment-bottom {
   font-size: 14px;
@@ -83,6 +96,7 @@ img {
   padding: 1%;
   border: 1px solid black;
   margin: 2%;
+  flex-flow: row nowrap;
 }
 
 .comment {

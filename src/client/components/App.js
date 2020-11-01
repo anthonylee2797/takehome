@@ -4,9 +4,11 @@ import Form from './Form'
 import Api from '../api/api'
 import mailchimp from '../assets/mailchimp-logo.png'
 
-const App = () => {
+/* eslint-disable react/display-name */
+
+const App = React.memo(() => {
   const [comments, setComments] = useState([])
- 
+
   // Grabs comments from database
   useEffect(() => {
     async function getComments () {
@@ -20,6 +22,7 @@ const App = () => {
     }
 
     getComments()
+    setInterval(getComments, 3000)
   }, [])
 
   return (
@@ -32,6 +35,6 @@ const App = () => {
       </div>
     </div>
   )
-}
+})
 
 export default App

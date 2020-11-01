@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const DataAccessObject = require('./dataAccessObject');
 const Comment = require('./comment');
 
+
 const app = express();
 const port = process.env.PORT || 3001;
 
@@ -20,7 +21,7 @@ comment.createTable().catch(error => {
 app.post('/createComment', function (request, response) {
   const { body } = request;
   comment.createComment(body).then(result => {
-    response.send(result);
+    response.send(result)
   });
 });
 

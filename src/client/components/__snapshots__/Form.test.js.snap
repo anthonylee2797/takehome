@@ -33,13 +33,22 @@ exports[`should render form correctly 1`] = `
           placeholder="Insert Comment"
         />
       </div>
-      <button
-        class="form-button"
-        data-testid="submit-btn"
-        type="submit"
+      <div
+        class="form-buttons"
       >
-        Add Comment
-      </button>
+        <button
+          class="form-button"
+          data-testid="submit-btn"
+          type="submit"
+        >
+          Add Comment
+        </button>
+        <button
+          class="form-button"
+        >
+          Delete Comments
+        </button>
+      </div>
     </form>
   </div>
 </div>
