@@ -10,7 +10,10 @@ const Comment = React.memo((props) => {
 
   return (
     <div className="comment">
-      <span className="comment-top"><span className='test'>{name}</span>{message}</span>
+      <span className="comment-top">
+        <span className='comment-top-container'>{name}</span>
+        {message}
+      </span>
       <p className="comment-bottom" >{date}</p>
     </div>
   )

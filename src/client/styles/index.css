@@ -68,7 +68,7 @@ img {
 
 /* Comments */
 
-.comments {
+.comments-container {
   transition: .3s;
   text-align: left;
   margin: .5% auto;
@@ -77,29 +77,21 @@ img {
   overflow-wrap: break-word;
 }
 
-.comment-top-p1 {
-  font-weight: bold;
-}
-
-.test {
-  font-weight: bold;
-  margin-right: 1%;
-}
-
-
-.comment-bottom {
-  font-size: 14px;
-  margin: .5% 0;
-}
-
 .comment {
   padding: 1%;
   border: 1px solid black;
   margin: 2%;
   flex-flow: row nowrap;
-}
-
-.comment {
   color: black;
   font-size: 16px;
+}
+
+.comment-top-container {
+  font-weight: bold;
+  margin-right: 1%;
+}
+
+.comment-bottom {
+  font-size: 14px;
+  margin: .5% 0;
 }

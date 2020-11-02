@@ -9,7 +9,7 @@ exports[`it should render comments with props 1`] = `
       class="comment-top"
     >
       <span
-        class="test"
+        class="comment-top-container"
       >
         Mailchimp
       </span>

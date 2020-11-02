@@ -30,7 +30,7 @@ const App = React.memo(() => {
       <img src={mailchimp}></img>
       <Form comments={comments} setComments={setComments} />
       <h2>Recent Comments</h2>
-      <div className='comments'>
+      <div className='comments-container'>
         {comments.map((comment) => <Comment key={comment.id} comment={comment} />)}
       </div>
     </div>
